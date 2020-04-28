@@ -64,4 +64,4 @@ class TestPage(TestCase):
         response = self.client.get(reverse('home'))
 
         self.assertTemplateUsed(response, 'home.html')
-        self.assertContains(response, str(timezone.now().time))
+        self.assertContains(response, str(timezone.now().hour)+':'+str(timezone.now().minute))
